@@ -13,18 +13,20 @@ struct TrafficLightView: View {
     
     var body: some View {
         VStack {
-            ColorCircleView(color: .red).opacity(stateDefinition(1))
-            ColorCircleView(color: .yellow).opacity(stateDefinition(2))
-            ColorCircleView(color: .green).opacity(stateDefinition(3))
+            ColorCircleView(color: .red)
+                .opacity(stateDefinition(1))
+            ColorCircleView(color: .yellow)
+                .opacity(stateDefinition(2))
+            ColorCircleView(color: .green)
+                .opacity(stateDefinition(3))
             Spacer()
             Button { buttonPress() } label: {
                 if counter == 0 {
-                    Text("Start")
+                    Text("Start").font(.title)
                 } else {
-                    Text("Next")
+                    Text("Next").font(.title)
                 }
             }
-            
         }
         .padding()
     }
@@ -38,7 +40,7 @@ struct TrafficLightView: View {
     }
     
     private func stateDefinition(_ sectionNumber: Int) -> Double {
-        let lightOff = 0.3
+        let lightOff = 0.5
         let lightOn = 1.0
         
         if sectionNumber == counter {
