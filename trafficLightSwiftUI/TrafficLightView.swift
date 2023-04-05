@@ -26,7 +26,7 @@ struct TrafficLightView: View {
                 opacity: stateDefinition(3)
             )
             Spacer()
-            Button { buttonPress() } label: {
+            Button(action: buttonPress) {
                 if counter == 0 {
                     Text("Start").font(.title)
                 } else {
