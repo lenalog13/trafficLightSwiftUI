@@ -13,12 +13,18 @@ struct TrafficLightView: View {
     
     var body: some View {
         VStack {
-            ColorCircleView(color: .red)
-                .opacity(stateDefinition(1))
-            ColorCircleView(color: .yellow)
-                .opacity(stateDefinition(2))
-            ColorCircleView(color: .green)
-                .opacity(stateDefinition(3))
+            ColorCircleView(
+                color: .red,
+                opacity: stateDefinition(1)
+            )
+            ColorCircleView(
+                color: .yellow,
+                opacity: stateDefinition(2)
+            )
+            ColorCircleView(
+                color: .green,
+                opacity: stateDefinition(3)
+            )
             Spacer()
             Button { buttonPress() } label: {
                 if counter == 0 {
